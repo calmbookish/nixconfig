@@ -105,7 +105,9 @@
     git
     vim
     emacs
-    wget 
+    wget
+    gcc
+    librewolf 
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

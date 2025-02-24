@@ -10,6 +10,8 @@
   home.packages = with pkgs; [
     htop
     neofetch
+    vscodium
+    amnezia-vpn
   ];
 
   # This value determines the Home Manager release that your
