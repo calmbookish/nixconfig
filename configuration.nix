@@ -164,6 +164,14 @@
     ensureDefaultPrinter = "Epson_L3060";
   };
 
+  # Delete garbage every week
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 1w";
+  };
+
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
