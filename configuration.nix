@@ -61,7 +61,7 @@
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  #services.printing.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -102,6 +102,12 @@
   # Enable KDE Connect
   programs.kdeconnect.enable = true;
 
+  # Configure printing services to use Epson drivers
+  services.printing = { enable = true; drivers = [ pkgs.epson-escpr ]; };
+
+  # Enable Avahi to use printer
+  services.avahi = { enable = true; nssmdns4 = true; };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -111,8 +117,24 @@
     wget
     gcc
     librewolf
-    libsForQt5.skanpage 
+    libsForQt5.skanpage
+    epson-escpr2 
   ];
+
+  hardware.printers = {
+  ensurePrinters = [
+    {
+      name = "Epson_L3060";
+      location = "Home";
+      deviceUri = "dnssd://EPSON%20L3060%20Series._pdl-datastream._tcp.local/";
+      model = "epson-inkjet-printer-escpr/Epson-L3060_Series-epson-escpr-en.ppd";
+      ppdOptions = {
+        PageSize = "A4";
+        };
+      }
+    ];
+    ensureDefaultPrinter = "Epson_L3060";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
