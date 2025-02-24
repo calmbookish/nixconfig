@@ -11,7 +11,8 @@
     htop
     neofetch
     vscodium
-    libreoffice-qt6-fresh     
+    libreoffice-qt6-fresh
+    telegram-desktop     
   ];
 
   # This value determines the Home Manager release that your
