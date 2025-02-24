@@ -107,7 +107,8 @@
     emacs
     wget
     gcc
-    librewolf 
+    librewolf
+    libsForQt5.skanpage 
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

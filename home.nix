@@ -11,7 +11,7 @@
     htop
     neofetch
     vscodium
-    amnezia-vpn
+    libreoffice-qt6-fresh     
   ];
 
   # This value determines the Home Manager release that your
