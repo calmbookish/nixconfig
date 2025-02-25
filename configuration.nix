@@ -120,6 +120,10 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
           installation_mode = "force_installed";
         };
+	"{290ce447-2abb-4d96-8384-7256dd4a1c43}" = {
+	  install_url = "https://addons.mozilla.org/firefox/downloads/latest/{290ce447-2abb-4d96-8384-7256dd4a1c43}/latest.xpi";
+	  installation_mode = "force_installed";
+	};
       };
     };
   };
