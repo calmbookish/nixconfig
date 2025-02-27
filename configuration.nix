@@ -153,7 +153,8 @@
     epson-escpr2
     ripgrep
     findutils
-    fd 
+    fd
+    emacsPackages.nerd-icons 
   ];
 
   hardware.printers = {
