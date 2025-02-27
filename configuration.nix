@@ -154,7 +154,14 @@
     ripgrep
     findutils
     fd
-    emacsPackages.nerd-icons 
+    emacsPackages.nerd-icons
+    gdb
+    clang-tools
+    bear
+    gnumake
+    python314
+    unzip
+    vscode-extensions.ms-vscode.cpptools 
   ];
 
   hardware.printers = {
