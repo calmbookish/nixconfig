@@ -150,7 +150,10 @@
     gcc
     librewolf
     libsForQt5.skanpage
-    epson-escpr2 
+    epson-escpr2
+    ripgrep
+    findutils
+    fd 
   ];
 
   hardware.printers = {
