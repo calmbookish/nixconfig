@@ -10,7 +10,7 @@
   home.packages = with pkgs; [
     htop
     neofetch
-    vscodium
+    vscodium.fhs
     libreoffice-qt6-fresh
     telegram-desktop     
   ];

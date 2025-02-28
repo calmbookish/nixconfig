@@ -124,6 +124,10 @@
 	  install_url = "https://addons.mozilla.org/firefox/downloads/latest/{290ce447-2abb-4d96-8384-7256dd4a1c43}/latest.xpi";
 	  installation_mode = "force_installed";
 	};
+	"@panicbutton" = {
+	  install_url = "https://addons.mozilla.org/firefox/downloads/latest/@panicbutton/latest.xpi";
+	  installation_mode = "force_installed";
+	};
       };
     };
   };
@@ -161,7 +165,9 @@
     gnumake
     python314
     unzip
-    vscode-extensions.ms-vscode.cpptools 
+    vscode-extensions.ms-vscode.cpptools
+    lldb
+    amnezia-vpn 
   ];
 
   hardware.printers = {
