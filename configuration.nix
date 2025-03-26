@@ -44,11 +44,39 @@
 
   # Enable flakes support
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  virtualisation.virtualbox.host.enable = true;
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
+    # Enable Syncthing
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+  };
+  
+  # Configure Syncthing
+  services.syncthing = {
+    user = "daniil";
+    group = "users";
+    dataDir = "/home/daniil";
+    configDir = "/home/daniil/.config/syncthing";
+    settings = {
+      devices = {
+        "bigpc" = { id = "LHZFLEL-3U62N2Q-PP2OUSO-ICGDPVC-F5UEGEO-6ISVNFK-ZAEDRGI-ZUL2BQP"; };
+      };
+    folders = {
+	"Home" = {
+	    path = "/home/daniil/";
+	    devices = [ "bigpc" ];
+        };
+    };
+  };
+};
 
+  # Syncthing: do not create default ~/Sync folder
+  systemd.services.syncthing.environment.STNODEFAULTFOLDER = "true";
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
@@ -59,6 +87,9 @@
     variant = "";
     options = "grp:alt_shift_toggle";
   };
+  boot.blacklistedKernelModules = [
+	"kvm_intel"
+  ];
 
   # Enable CUPS to print documents.
   #services.printing.enable = true;
@@ -100,17 +131,15 @@
     policies = {
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
-      Preferences = {
-        "cookiebanners.service.mode.privateBrowsing" = 2; # Block cookie banners in private browsing
-        "cookiebanners.service.mode" = 2; # Block cookie banners
-        "privacy.donottrackheader.enabled" = true;
-        "privacy.fingerprintingProtection" = true;
-        "privacy.resistFingerprinting" = true;
-        "privacy.trackingprotection.emailtracking.enabled" = true;
-        "privacy.trackingprotection.enabled" = true;
-        "privacy.trackingprotection.fingerprinting.enabled" = true;
-        "privacy.trackingprotection.socialtracking.enabled" = true;
-      };
+      #Preferences = {
+      #  "privacy.donottrackheader.enabled" = true;
+      #  "privacy.fingerprintingProtection" = true;
+      #  "privacy.resistFingerprinting" = true;
+      #  "privacy.trackingprotection.emailtracking.enabled" = true;
+      #  "privacy.trackingprotection.enabled" = true;
+      #  "privacy.trackingprotection.fingerprinting.enabled" = true;
+      #  "privacy.trackingprotection.socialtracking.enabled" = true;
+      #};
       ExtensionSettings = {
         "jid1-ZAdIEUB7XOzOJw@jetpack" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/duckduckgo-for-firefox/latest.xpi";
@@ -126,6 +155,10 @@
 	};
 	"@panicbutton" = {
 	  install_url = "https://addons.mozilla.org/firefox/downloads/latest/@panicbutton/latest.xpi";
+	  installation_mode = "force_installed";
+	};
+	"dfyoutube@example.com" = {
+	  install_url = "https://addons.mozilla.org/firefox/downloads/latest/dfyoutube@example.com/latest.xpi";
 	  installation_mode = "force_installed";
 	};
       };
@@ -167,7 +200,11 @@
     unzip
     vscode-extensions.ms-vscode.cpptools
     lldb
-    amnezia-vpn 
+    amnezia-vpn
+    qbittorrent
+    brave
+    thunderbird
+    keepassxc 
   ];
 
   hardware.printers = {

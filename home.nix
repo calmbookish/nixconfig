@@ -26,8 +26,8 @@
   home.stateVersion = "24.11";
   programs.git = {
     enable = true;
-    userName = "Daniil Prokofev";
-    userEmail = "danieldzen@yandex.ru";
+    userName = "calmbookish";
+    userEmail = "calmbookish@disroot.org";
   };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
