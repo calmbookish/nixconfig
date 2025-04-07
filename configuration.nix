@@ -1,8 +1,9 @@
-{ config, pkgs, ... }:
+{ pkgs, inputs, config, ... }:
 
 {
   imports =
     [
+      inputs.sops-nix.nixosModules.sops
       ./hardware-configuration.nix
       ./modules/bluetooth.nix  
       ./modules/boot.nix  
@@ -18,10 +19,15 @@
       ./modules/sound.nix  
       ./modules/unfree.nix  
       ./modules/users.nix
+      ./modules/syncthing.nix
+      ./modules/bash.nix
     ];
   # Enable flakes support
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.auto-optimise-store = true;
+  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+  sops.age.keyFile = "/home/daniil/.config/sops/age/keys.txt";
   system.stateVersion = "24.11"; 
 
 }

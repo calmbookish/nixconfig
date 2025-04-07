@@ -25,6 +25,8 @@
     brave
     thunderbird
     keepassxc
-    gnupg 
+    gnupg
+    anydesk 
+    sops
   ];
 }
