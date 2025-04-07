@@ -18,4 +18,6 @@
     ];
     ensureDefaultPrinter = "Epson_L3060";
   };
+  hardware.sane.enable = true;
+  users.users.daniil.extraGroups = [ "scanner" "lp" ];
 }
