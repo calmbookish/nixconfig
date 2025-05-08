@@ -28,5 +28,6 @@
     gnupg
     anydesk 
     sops
+    ungoogled-chromium
   ];
 }
