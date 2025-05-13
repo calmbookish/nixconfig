@@ -21,6 +21,7 @@
       ./modules/users.nix
       ./modules/syncthing.nix
       ./modules/bash.nix
+      ./modules/iphone.nix
     ];
   # Enable flakes support
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

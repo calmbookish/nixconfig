@@ -5,7 +5,6 @@
     emacs
     wget
     gcc
-    librewolf
     libsForQt5.skanpage
     epson-escpr2
     ripgrep
@@ -20,14 +19,19 @@
     unzip
     vscode-extensions.ms-vscode.cpptools
     lldb
-    amnezia-vpn
     qbittorrent
-    brave
     thunderbird
     keepassxc
-    gnupg
-    anydesk 
+    gnupg 
     sops
-    ungoogled-chromium
+    alacritty
+    qutebrowser
+    feh
+    mupdf
+    ranger
+    redshift
+    mutt
+    picom
+    
   ];
 }
