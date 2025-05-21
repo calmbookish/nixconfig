@@ -32,6 +32,11 @@
     redshift
     mutt
     picom
-    
+    ungoogled-chromium
+    amnezia-vpn
+    nchat
+    bitwarden-desktop
+    altus
+    ncurses    
   ];
 }
