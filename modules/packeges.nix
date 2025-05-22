@@ -37,6 +37,9 @@
     nchat
     bitwarden-desktop
     altus
-    ncurses    
+    ncurses
+    tor-browser
+    vlc
+    hdparm    
   ];
 }
