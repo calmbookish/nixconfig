@@ -10,8 +10,7 @@
     htop
     neofetch
     vscodium.fhs
-    libreoffice-qt6-fresh
-    telegram-desktop     
+    libreoffice-qt6-fresh     
   ];
   home.stateVersion = "24.11";
   programs.home-manager.enable = true;

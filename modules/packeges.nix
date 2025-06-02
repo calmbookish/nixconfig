@@ -40,6 +40,13 @@
     ncurses
     tor-browser
     vlc
-    hdparm    
+    hdparm
+    joplin-desktop
+    newsboat
+    yt-dlp
+    nekoray
+    cargo
+    rustup
+    telegram-desktop    
   ];
 }
